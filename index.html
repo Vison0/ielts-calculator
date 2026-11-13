@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>IELTS Band Score Calculator — Free Overall & Raw Score Converter</title>
+<meta name="description" content="Free IELTS band score calculator. Calculate your overall IELTS band score from Listening, Reading, Writing & Speaking, or convert raw correct answers (0-40) to band scores for Academic & General Training." />
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<header class="hero">
+  <p class="banner">Free tool by <a href="https://www.band9prep.com/ielts-band-score-calculator">Band9Prep — AI-powered IELTS preparation</a></p>
+  <h1>IELTS Band Score <span class="accent">Calculator</span></h1>
+  <p class="sub">Calculate your overall IELTS band score or convert raw scores (correct answers) to bands. Works for Academic &amp; General Training. 100% offline, no API.</p>
+  <div class="tabs">
+    <button id="tabOverall" class="active" type="button">Overall Band Calculator</button>
+    <button id="tabRaw" type="button">Raw Score Converter</button>
+  </div>
+</header>
+
+<main>
+  <!-- Overall calculator -->
+  <section id="panelOverall" class="card">
+    <h2>Overall IELTS Band Score</h2>
+    <div class="grid">
+      <label>Listening Score<select id="inL"></select></label>
+      <label>Reading Score<select id="inR"></select></label>
+      <label>Writing Score<select id="inW"></select></label>
+      <label>Speaking Score<select id="inS"></select></label>
+    </div>
+    <div class="result">
+      <span class="result-label">Overall Band Score</span>
+      <strong id="outOverall">6.0</strong>
+      <span id="outOverallLabel" class="level">Competent</span>
+      <p class="hint">Average of all four scores, rounded to the nearest half band (official IELTS rule).</p>
+    </div>
+    <button class="reset" id="resetOverall" type="button">Reset</button>
+  </section>
+
+  <!-- Raw converter -->
+  <section id="panelRaw" class="card hidden">
+    <h2>Raw Score Converter</h2>
+    <div class="seg">
+      <button id="btnAcademic" class="active" type="button">Academic</button>
+      <button id="btnGeneral" type="button">General Training</button>
+    </div>
+    <div class="grid">
+      <label>Listening (correct / 40)<input id="rawL" type="number" min="0" max="40" placeholder="0 – 40" /></label>
+      <label>Reading (correct / 40)<input id="rawR" type="number" min="0" max="40" placeholder="0 – 40" /></label>
+      <label>Writing Score<select id="rawW"></select></label>
+      <label>Speaking Score<select id="rawS"></select></label>
+    </div>
+    <div class="result">
+      <span class="result-label">Overall Band Score (<span id="testTypeLabel">Academic</span>)</span>
+      <strong id="outRaw">–</strong>
+      <span id="outRawLabel" class="level"></span>
+      <div id="rawBreakdown" class="breakdown"></div>
+      <p class="hint">Listening &amp; Reading converted from correct answers. Writing &amp; Speaking entered as band scores.</p>
+    </div>
+    <button class="reset" id="resetRaw" type="button">Reset</button>
+  </section>
+
+  <!-- Tables -->
+  <section class="tables">
+    <h2>Official Conversion Tables</h2>
+    <div class="table-grid">
+      <div><h3>Listening</h3><table id="tblL"></table></div>
+      <div><h3>Academic Reading</h3><table id="tblA"></table></div>
+      <div><h3>General Reading</h3><table id="tblG"></table></div>
+    </div>
+  </section>
+
+  <section class="faq">
+    <h2>FAQ</h2>
+    <details open><summary>How is the overall band score calculated?</summary><p>Average of Listening, Reading, Writing, Speaking, rounded to the nearest half band. E.g. 6.625 → 6.5, 6.75 → 7.0.</p></details>
+    <details><summary>Academic vs General reading difference?</summary><p>Same 0–9 scale, but General Reading needs more correct answers per band (texts are easier). Listening is identical.</p></details>
+    <details><summary>How many correct for band 7 Listening?</summary><p>30–31 out of 40.</p></details>
+    <details><summary>How many correct for band 7 Reading?</summary><p>Academic: 30–32. General: 34–35.</p></details>
+  </section>
+</main>
+
+<footer>
+  <p>Open-source IELTS calculator (MIT). Full practice platform with AI Writing &amp; Speaking feedback: <a href="https://www.band9prep.com">Band9Prep</a> · <a href="https://www.band9prep.com/ielts-band-score-calculator">Online version</a> · <a href="https://www.band9prep.com/ielts-mock-test">Free mock test</a></p>
+</footer>
+
+<script src="calculator.js"></script>
+</body>
+</html>
